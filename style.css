@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Klee One", cursive;
+  outline: none;
+  border: none;
+  color: var(--font-color);
+}
+
+:root {
+  --font-color: #4a4847;
+  --bg-table: #faf6f1;
+  --main: #e8dccd;
+  --btn-hover: #ede4d8;
+  --line: #8f8e8e;
+  --shadow: #4a443c4f;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--main);
+}
+
+.planner {
+  text-align: center;
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px 0;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.table {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+  gap: 15px;
+  padding: 15px;
+  box-shadow: 1px 2px 4px var(--shadow);
+  border-radius: 7px;
+  background-color: var(--bg-table);
+}
+
+h3 {
+  text-transform: uppercase;
+  background-color: var(--main);
+  text-align: center;
+  font-weight: normal;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+
+.col {
+  padding: 12px 0;
+  border-radius: 3px;
+}
+
+input {
+  width: 100%;
+  background-color: transparent;
+  padding-left: 5px;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+
+button {
+  padding: 7px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--bg-table);
+  box-shadow: 1px 2px 3px var(--shadow);
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--btn-hover);
+}
+
+@media screen and (max-width: 800px) {
+  .planner {
+    padding: 15px 0;
+    justify-content: flex-start;
+    overflow-y: auto;
+  }
+  .table {
+    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  }
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+    letter-spacing: normal;
+  }
+  .table {
+    grid-template-columns: repeat(auto-fit, minmax(60%, 1fr));
+  }
+}
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .planner {
+    justify-content: flex-start;
+    overflow-y: auto;
+  }
+  .table {
+    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  }
+}
